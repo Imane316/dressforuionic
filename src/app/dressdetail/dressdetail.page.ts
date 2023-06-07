@@ -8,6 +8,7 @@ import { DressService } from '../services/dress.service';
   styleUrls: ['./dressdetail.page.scss'],
 })
 export class DressdetailPage implements OnInit {
+
   dress: any;
 
   constructor(

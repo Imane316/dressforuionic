@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'navbar',
     pathMatch: 'full'
   },
   {
@@ -19,13 +19,14 @@ const routes: Routes = [
     path: 'dresses',
     loadChildren: () => import('./dress-list/dress-list.module').then( m => m.DressListPageModule)
   },
-  {
-    path: 'dressdetail/:iddress',
-    loadChildren: () => import('./dressdetail/dressdetail.module').then( m => m.DressdetailPageModule)
-  },
+ 
   {
     path: 'categorydetail/:idcategory',
     loadChildren: () => import('./categorydetail/categorydetail.module').then( m => m.CategorydetailPageModule)
+  },
+  {
+    path:'dressdetail/:iddress',
+    loadChildren:() => import('./dressdetail/dressdetail.module').then(m => m.DressdetailPageModule)
   },
   {
     path: 'categories',
@@ -64,9 +65,10 @@ const routes: Routes = [
     loadChildren: () => import('./updatecategory/updatecategory.module').then( m => m.UpdatecategoryPageModule)
   },
   {
-    path: 'dressdetail',
-    loadChildren: () => import('./dressdetail/dressdetail.module').then( m => m.DressdetailPageModule)
+    path: 'dress-list',
+    loadChildren: () => import('./dress-list/dress-list.module').then( m => m.DressListPageModule)
   },
+  
   
 ];
 

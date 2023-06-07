@@ -1,51 +1,27 @@
 <ion-header>
   <ion-toolbar>
-    <div class="logo">
-      <h1>DressForU</h1>
-    </div>
-    <ion-buttons slot="end">
-      <ion-button routerLink="">
-        Accueil
-      </ion-button>
-      <ion-button routerLink="/dresses">
-        Robes
-      </ion-button>
-      <ion-button routerLink="/categories">
-        Catégories
-      </ion-button>
-      <ion-button routerLink="/contact">
-        Contact
-      </ion-button>
-      <ion-button routerLink="/login">
-        Se connecter
-      </ion-button>
-    </ion-buttons>
+    <ion-title>
+      DressForU
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-grid>
-    <ion-row>
-      <ion-col >
-        <img [src]="dress.picture" alt="Image de la robe">
-      </ion-col>
-      <ion-col >
-        <ion-card>
-          <ion-card-header>
-            <ion-card-title>{{ dress.name }}</ion-card-title>
-          </ion-card-header>
-          <ion-card-content>
-            <p>{{ dress.price }} €</p>
-            <p>{{ dress.material }}</p>
-            <p>{{ dress.size }}</p>
-            <p>{{ dress.material }}</p>
-          </ion-card-content>
-          <ion-button expand="full" routerLink="/dresses" style="margin-top: 10px;">Précédent</ion-button>
-          <ion-button expand="full" routerLink="/updatedress/{{dress.iddress}}">Mettre à jour</ion-button>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+  <div class="container">
+    <div class="left-column">
+      <img [src]="dress.picture" alt="Image de la robe">
+    </div>
+    <div class="right-column">
+      <h2>{{ dress.name }}</h2>
+      <p> {{ dress.price }} €</p>
+      <p>{{ dress.material }}</p>
+      <p>{{ dress.size }}</p>
+      <p>{{ dress.material }}</p>
+
+      <div class="button-container">
+        <ion-button routerLink="/dresses" expand="block" color="primary" style="margin-right: 10px;">Précédent</ion-button>
+        <ion-button routerLink="/updatedress/{{dress.iddress}}" expand="block" color="primary">Mettre à jour</ion-button>
+      </div>
+    </div>
+  </div>
 </ion-content>
-
-

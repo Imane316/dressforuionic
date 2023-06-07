@@ -5,7 +5,7 @@ import { DressdetailPage } from './dressdetail.page';
 
 const routes: Routes = [
   {
-    path: ' ',
+    path: '',
     component: DressdetailPage
   }
 ];

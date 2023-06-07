@@ -29,18 +29,7 @@
     padding: 10px;
     text-align: left;
   }
-  button {
-    background-color: #9866C7; 
-    color: #ffffff; 
-    padding: 10px 20px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color:#9866C7; 
-  }
+
   
   .add-button-container {
     display: flex;
@@ -48,19 +37,7 @@
     margin-top: 20px;
   }
   
-  .add-button {
-    padding: 10px 20px;
-    background-color: #9866C7;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  .add-button:hover {
-    background-color: #9866C7;
-  }
+ 
   .navbar {
     display: flex;
     justify-content: center;

@@ -12,9 +12,11 @@
   .container {
     grid-template-columns: 1fr 1fr;
     gap: 1px; /* Ajustez cette valeur selon vos besoins */
-    display: flex;
+    display:flexbox;
     justify-content: center; /* Centrer horizontalement */
     align-items: center; /* Centrer verticalement */
+    height: 100vh; /* Le container occupe la hauteur complète de la page */
+  overflow: hidden;
   }
   
   .left-column {
@@ -23,7 +25,7 @@
     align-items: center;
     justify-content: center;
     width: 350px;
-    height: 350px;
+    height: 500px;
   }
   
   .left-column img {
@@ -54,4 +56,5 @@
   .button:hover {
     background-color: #9866C7;
   }
+ 
   

@@ -1,3 +1,4 @@
+
 <ion-header>
   <ion-toolbar>
     <div class="logo">
@@ -24,28 +25,25 @@
 </ion-header>
 
 <ion-content>
-  <div class="dress-list">
-    <ion-card *ngFor="let dress of dresses" class="dress-item">
-      <ion-card-header>
+  
+
+  <ion-list>
+    <ion-item *ngFor="let dress of dresses">
+      <ion-thumbnail slot="start">
+        <ion-img [src]="dress.picture" alt="Image de la robe"></ion-img>
+      </ion-thumbnail>
+      <ion-label>
         <h2>{{ dress.name }}</h2>
-      </ion-card-header>
-      <ion-card-content>
-        <img [src]="dress.picture" alt="Image de la robe" class="dress-image">
-      </ion-card-content>
-      <a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a>
+        <p><a [routerLink]="['/dressdetail', dress.iddress]">Voir les détails</a></p>
+      </ion-label>
+      <ion-button slot="end" color="danger" (click)="deleteDress(dress.iddress)">
+        Supprimer
+      </ion-button>
+    </ion-item>
+  </ion-list>
 
-      <ion-buttons>
-        <ion-button (click)="deleteDress(dress.iddress)">
-          Supprimer
-        </ion-button>
-      </ion-buttons>
-    </ion-card>
-  </div>
-
-  <div class="add-button-container">
-    <ion-button class="add-button" routerLink="/adddress">
-      Ajouter une nouvelle robe
-    </ion-button>
-  </div>
+  <ion-button class="add-button" routerLink="/adddress" expand="full">
+    Ajouter une nouvelle robe
+  </ion-button>
 </ion-content>
 
