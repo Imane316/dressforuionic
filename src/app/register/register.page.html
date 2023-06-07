@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>register</ion-title>
+    <div class="logo">
+      <h1>DressForU</h1>
+    </div>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">register</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-nav>
+    <nav>
+      <ul>
+        <li><a routerLink="">Accueil</a></li>
+        <li><a routerLink="/dresses">Robes</a></li>
+        <li><a routerLink="/categories">Catégories</a></li>
+        <li><a routerLink="/contact">Contact</a></li>
+        <li><a routerLink="/login">Se connecter</a></li>
+      </ul>
+    </nav>
+
+    <div class="form-container">
+      <h2>S'enregister</h2>
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <ion-item>
+          <ion-label>Pseudo:</ion-label>
+          <ion-input type="text" formControlName="pseudo"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Mot de passe:</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label>Rôle:</ion-label>
+          <ion-input type="text" formControlName="role"></ion-input>
+        </ion-item>
+        <ion-button expand="full" type="submit" class="add-button">Valider</ion-button>
+        <div *ngIf="message">{{ message }}</div>
+      </form>
+    </div>
+  </ion-nav>
 </ion-content>
+

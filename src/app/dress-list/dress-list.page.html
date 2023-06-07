@@ -31,8 +31,9 @@
       </ion-card-header>
       <ion-card-content>
         <img [src]="dress.picture" alt="Image de la robe" class="dress-image">
-        <a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a>
       </ion-card-content>
+      <a routerLink="/dressdetail/{{ dress.iddress }}">Voir les détails</a>
+
       <ion-buttons>
         <ion-button (click)="deleteDress(dress.iddress)">
           Supprimer

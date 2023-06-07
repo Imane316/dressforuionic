@@ -32,4 +32,5 @@ export class DressdetailPage implements OnInit {
       console.log(dressName); // Afficher le nom de la robe dans la console
       });
   }
+
 }

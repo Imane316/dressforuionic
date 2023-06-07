@@ -63,6 +63,10 @@ const routes: Routes = [
     path: 'updatecategory/:idcategory',
     loadChildren: () => import('./updatecategory/updatecategory.module').then( m => m.UpdatecategoryPageModule)
   },
+  {
+    path: 'dressdetail',
+    loadChildren: () => import('./dressdetail/dressdetail.module').then( m => m.DressdetailPageModule)
+  },
   
 ];
 
