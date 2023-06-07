@@ -1,0 +1,56 @@
+.logo-container {
+    text-align: center;
+  }
+  
+  h1 {
+    margin: 0;
+    color: #951e95;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #951e95;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: var(--ion-color-dark);
+  }
+  
+  .ribbon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image-container {
+    display: flex;
+    /* Ajoutez les styles d'animation ou de transition appropriés pour animer les images */
+  }
+  
+  .image-container ion-img {
+    width: 100%;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .image-container ion-img:last-child {
+    margin-right: 0; /* Supprime l'espacement de la dernière image */
+  }
+  

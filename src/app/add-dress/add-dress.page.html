@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="logo">
+      <h1>DressForU</h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="form-container">
+    <h2>Création de votre nouvelle robe</h2>
+    <form [formGroup]="dressForm" (ngSubmit)="sendForm()">
+      <ion-item>
+        <ion-label position="floating">Nom* :</ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Photo :</ion-label>
+        <ion-input type="text" formControlName="picture"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Prix* :</ion-label>
+        <ion-input type="number" formControlName="price"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Matière :</ion-label>
+        <ion-input type="text" formControlName="material"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Taille :</ion-label>
+        <ion-input type="text" formControlName="size"></ion-input>
+      </ion-item>
+  
+      <ion-button expand="full" type="submit" class="add-button"  >Ajouter la robe</ion-button>
+      <div><label>*: champ obligatoire</label></div>
+      <div *ngIf="message">{{ message }}</div>
+    </form>
+  </div>
+</ion-content>

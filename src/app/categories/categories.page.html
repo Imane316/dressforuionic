@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <div class="logo">
+      <h1>DressForU</h1>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <nav>
+    <ul>
+      <li><a routerLink="">Accueil</a></li>
+      <li><a routerLink="/dresses">Robes</a></li>
+      <li><a routerLink="/categories">Catégories</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/login">Se connecter</a></li>
+    </ul>
+  </nav>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col><strong>Nom de la catégorie</strong></ion-col>
+      <ion-col></ion-col>
+    </ion-row>
+    <ion-row *ngFor="let category of categories">
+      <ion-col>{{ category.name }}</ion-col>
+      <ion-col>
+        <a routerLink="/categorydetail/{{ category.idcategory }}">Voir les détails</a>
+      </ion-col>
+      <ion-col>
+        <ion-button (click)="deleteCategory(category.idcategory)">Supprimer</ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div class="add-button-container">
+    <ion-button class="add-button" routerLink="/addcategory">Ajouter une nouvelle catégorie</ion-button>
+  </div>
+</ion-content>
+
+
