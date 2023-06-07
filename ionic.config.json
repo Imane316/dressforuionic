@@ -1,0 +1,7 @@
+{
+  "name": "dressforuionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
