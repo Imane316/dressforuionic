@@ -1,40 +1,34 @@
-
 <ion-header>
   <ion-toolbar>
     <div class="logo">
       <h1>DressForU</h1>
     </div>
-    <ion-buttons slot="end">
-      <ion-button routerLink="">
-        Accueil
-      </ion-button>
-      <ion-button routerLink="/dresses">
-        Robes
-      </ion-button>
-      <ion-button routerLink="/categories">
-        Catégories
-      </ion-button>
-      <ion-button routerLink="/contact">
-        Contact
-      </ion-button>
-      <ion-button routerLink="/login">
-        Se connecter
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  
-
+  <nav>
+    <ul>
+      <li><a routerLink="">Accueil</a></li>
+      <li><a routerLink="/dresses">Robes</a></li>
+      <li><a routerLink="/categories">Catégories</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/login">Se connecter</a></li>
+    </ul>
+  </nav>
   <ion-list>
-    <ion-item *ngFor="let dress of dresses">
+    <ion-item *ngFor="let dress of dresses" >
+      <a routerLink="/dressdetail/{{ dress.iddress }}">voir details</a>
+
+     <!--<ion-button (click)="goDressDetail(dress.iddress)">Voir détails </ion-button>--> 
+
+      
       <ion-thumbnail slot="start">
         <ion-img [src]="dress.picture" alt="Image de la robe"></ion-img>
       </ion-thumbnail>
       <ion-label>
         <h2>{{ dress.name }}</h2>
-        <p><a [routerLink]="['/dressdetail', dress.iddress]">Voir les détails</a></p>
+        
       </ion-label>
       <ion-button slot="end" color="danger" (click)="deleteDress(dress.iddress)">
         Supprimer

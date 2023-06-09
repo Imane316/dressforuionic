@@ -1,13 +1,38 @@
 .logo {
-    text-align: center;
-    background-color: white;
-    padding: 10px;
-  }
-  
-  h1 {
-    margin: 0;
-    color:#9866C7;
-  }
+  text-align: center;
+  background-color: white;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0;
+  color:#9866C7;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  padding: 10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  margin-right: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
   
   table {
     width: 100%;
@@ -53,31 +78,7 @@
   .add-button:hover {
     background-color: #9866C7;
   }
-  .navbar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
-  
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  li {
-    margin-right: 20px;
-  }
-  
-  a {
-    text-decoration: none;
-    color: #333;
-  }
+
   
   .container {
     display: flex;

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DressService } from '../services/dress.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dressdetail',
@@ -13,15 +14,16 @@ export class DressdetailPage implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dressService: DressService
+    private dressService: DressService,
+    private router : Router
   ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('iddress');
     if (id) {
       this.getDressById(id);
+      console.log('id:',id);
     }
-    
   }
 
   getDressById(id: string): void {
@@ -29,9 +31,8 @@ export class DressdetailPage implements OnInit {
       .subscribe(response => {
         this.dress = response;
         console.log(this.dress);
-        const dressName = this.dress.name; // Obtenir uniquement le nom de la robe
-      console.log(dressName); // Afficher le nom de la robe dans la console
-      });
-  }
+        this.router.navigate(['/dressdetail/', id ]);
 
+      });
+}
 }

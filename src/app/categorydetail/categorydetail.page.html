@@ -3,26 +3,20 @@
     <div class="logo">
       <h1>DressForU</h1>
     </div>
-    <ion-buttons slot="end">
-      <ion-button routerLink="">
-        Accueil
-      </ion-button>
-      <ion-button routerLink="/dresses">
-        Robes
-      </ion-button>
-      <ion-button routerLink="/categories">
-        Catégories
-      </ion-button>
-      <ion-button routerLink="/contact">
-        Contact
-      </ion-button>
-      <ion-button routerLink="/login">
-        Se connecter
-      </ion-button>
-    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+
 <ion-content>
+  <nav>
+    <ul>
+      <li><a routerLink="">Accueil</a></li>
+      <li><a routerLink="/dresses">Robes</a></li>
+      <li><a routerLink="/categories">Catégories</a></li>
+      <li><a routerLink="/contact">Contact</a></li>
+      <li><a routerLink="/login">Se connecter</a></li>
+    </ul>
+  </nav>
+
   <ion-grid *ngIf="category" class="container">
     <ion-row>
       <ion-col>
@@ -35,7 +29,8 @@
       <ion-col>
         <ion-list class="dress-list">
           <ion-item *ngFor="let dressId of dressIds">
-            <a [routerLink]="['/dressdetail/', dressId]">{{ dressNames[dressId] }}</a>
+            <a routerLink="/dressdetail/{{ dressId }}">{{ dressNames[dressId] }}</a>
+            
           </ion-item>
         </ion-list>
       </ion-col>

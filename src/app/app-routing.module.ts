@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { merge } from 'rxjs';
 
 const routes: Routes = [
   {
@@ -24,10 +25,7 @@ const routes: Routes = [
     path: 'categorydetail/:idcategory',
     loadChildren: () => import('./categorydetail/categorydetail.module').then( m => m.CategorydetailPageModule)
   },
-  {
-    path:'dressdetail/:iddress',
-    loadChildren:() => import('./dressdetail/dressdetail.module').then(m => m.DressdetailPageModule)
-  },
+  
   {
     path: 'categories',
     loadChildren: () => import('./categories/categories.module').then( m => m.CategoriesPageModule)
@@ -65,9 +63,10 @@ const routes: Routes = [
     loadChildren: () => import('./updatecategory/updatecategory.module').then( m => m.UpdatecategoryPageModule)
   },
   {
-    path: 'dress-list',
-    loadChildren: () => import('./dress-list/dress-list.module').then( m => m.DressListPageModule)
-  },
+    path: 'dressdetail/:iddress',
+    loadChildren: () => import('./dressdetail/dressdetail.module').then( m => m.DressdetailPageModule)
+  }
+  
   
   
 ];

@@ -26,9 +26,16 @@ export class LoginPage  {
     const password = (<string>this.loginForm.get('password')?.value) || '';
     this.userService.login(pseudo, password).subscribe(
       data => {
+        
         localStorage.setItem('token', data.token);
         console.log("ok");
         this.loginForm.reset();
+        this.message = "Vous êtes connecté";
+      },
+      error => {
+        this.message = error.error.message; // Mettre à jour la propriété message avec le message d'erreur renvoyé par le backend
+      
+        this.loginForm.reset(); 
       },
       )
   }

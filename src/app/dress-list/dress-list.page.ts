@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DressService } from   '../services/dress.service';
+import { NavController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dress-list',
@@ -10,7 +12,7 @@ export class DressListPage implements OnInit {
 
   dresses: any[] = [];
   
-  constructor(private dressService: DressService) { }
+  constructor(private dressService: DressService,private navCtrl: NavController,private router : Router) { }
 
   ngOnInit(): void {
     this.getDresses();
@@ -27,7 +29,9 @@ export class DressListPage implements OnInit {
       .subscribe(() => {
         this.getDresses();
       });
-
-}
+  }
+  goDressDetail(id: string):void{
+    this.router.navigate(['/dressdetail/',id]);
+  }
 
 }
